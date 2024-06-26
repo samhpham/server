@@ -1,0 +1,9 @@
+name: "Build and upload docker image"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
