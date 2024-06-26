@@ -1,0 +1,1 @@
+docker build -t 15-server:0.1 . 
