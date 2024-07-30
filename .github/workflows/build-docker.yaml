@@ -19,6 +19,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Set outputs
+      id: commit_sha
+      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+    - name: Check outputs
+      run: echo ${{ steps.commit_sha.outputs.sha_short }}
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag "${IMAGE_TAG}"
 
